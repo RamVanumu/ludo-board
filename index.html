@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ludo</title>
+
+    <style>
+      #main-board {
+        width: 780px;
+        height: 780px;
+        border: 1px solid black;
+        margin: auto;
+      }
+
+      .home {
+        width: 310px;
+        height: 310px;
+        border: 1px solid black;
+        float: left;
+      }
+
+      .vertical-path {
+        height: 312px;
+        width: 156px;
+        float: left;
+      }
+
+      .horizontal-path {
+        height: 156px;
+        width: 312px;
+        float: left;
+      }
+
+      #goal {
+        height: 0px;
+        width: 0px;
+        border: 78px solid black;
+        border-left-color: rgb(47, 162, 47);
+        border-top-color: rgb(230, 205, 92);
+        border-bottom-color: rgb(225, 21, 21);
+        border-right-color: rgb(21, 94, 221);
+        float: left;
+      }
+
+      .cell {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        float: left;
+      }
+
+      #green-home {
+        background-color: rgb(47, 162, 47);
+      }
+
+      #yellow-home {
+        background-color: rgb(230, 205, 92);
+      }
+
+      #red-home {
+        background-color: rgb(225, 21, 21);
+      }
+
+      #blue-home {
+        background-color: rgb(21, 94, 221);
+      }
+
+      .home-inside-1 {
+        width: 250px;
+        height: 250px;
+        border: 2px solid white;
+        border-radius: 5%;
+        margin: 30px auto;
+      }
+
+      .home-inside-2 {
+        width: 200px;
+        height: 200px;
+        border-radius: 5%;
+        background-color: white;
+        margin: 25px auto;
+      }
+
+      .coins {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: left;
+        margin: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="font-family: sans-serif; text-align: center;">My Ludo Board</h1>
+    </header>
+    <div id="main-board">
+      <div class="home" id="green-home">
+        <div class="home-inside-1">
+          <div class="home-inside-2">
+            <div class="coins" style="background-color: rgb(47, 162, 47);"></div>
+            <div class="coins" style="background-color: rgb(47, 162, 47);"></div>
+            <div class="coins" style="background-color: rgb(47, 162, 47);"></div>
+            <div class="coins" style="background-color: rgb(47, 162, 47);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vertical-path">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(230, 205, 92)"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="home" id="yellow-home">
+        <div class="home-inside-1">
+          <div class="home-inside-2">
+            <div class="coins" style="background-color: rgb(230, 205, 92);"></div>
+            <div class="coins" style="background-color: rgb(230, 205, 92);"></div>
+            <div class="coins" style="background-color: rgb(230, 205, 92);"></div>
+            <div class="coins" style="background-color: rgb(230, 205, 92);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-path">
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell" style="background-color: rgb(47, 162, 47)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div id="goal"></div>
+      <div class="horizontal-path">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(21, 94, 221)"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="home" id="red-home">
+        <div class="home-inside-1">
+          <div class="home-inside-2">
+            <div class="coins" style="background-color: rgb(225, 21, 21);"></div>
+            <div class="coins" style="background-color: rgb(225, 21, 21);"></div>
+            <div class="coins" style="background-color: rgb(225, 21, 21);"></div>
+            <div class="coins" style="background-color: rgb(225, 21, 21);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vertical-path">
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell" style="background-color: rgb(225, 21, 21)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="home" id="blue-home">
+        <div class="home-inside-1">
+          <div class="home-inside-2">
+            <div class="coins" style="background-color: rgb(21, 94, 221);"></div>
+            <div class="coins" style="background-color: rgb(21, 94, 221);"></div>
+            <div class="coins" style="background-color: rgb(21, 94, 221);"></div>
+            <div class="coins" style="background-color: rgb(21, 94, 221);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
